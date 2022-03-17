@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo/Pages/components/custom_appbar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -15,34 +16,28 @@ class _HomePageState extends State<HomePage> {
       body: SafeArea(
         child: Column(
           children: [
+            CustomAppBarWidget(),
             Padding(
-              padding: const EdgeInsets.symmetric(
-                vertical: 20,
-                horizontal: 10,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    "Hey whatsupp",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                decoration: BoxDecoration(
+                  color: Colors.grey[200],
+                ),
+                child: TextFormField(
+                  decoration: const InputDecoration(
+                    hintText: "Search",
+                    hintStyle: TextStyle(
+                      color: Colors.black,
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide.none,
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide.none,
                     ),
                   ),
-                  Container(
-                    child: Image.asset(
-                      "assets/images/NasılÇizerim.png",
-                      fit: BoxFit.contain,
-                    ),
-                    decoration: BoxDecoration(
-                      color: Colors.blue[100],
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    height: 45,
-                    width: 45,
-                  )
-                ],
+                ),
               ),
             )
           ],
