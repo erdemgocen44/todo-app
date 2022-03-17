@@ -31,8 +31,8 @@ class CustomAppBarWidget extends StatelessWidget {
               color: Colors.blue[100],
               borderRadius: BorderRadius.circular(8.0),
             ),
-            height: 45,
-            width: 45,
+            height: MediaQuery.of(context).size.height * 0.08,
+            width: MediaQuery.of(context).size.width * 0.12,
           )
         ],
       ),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:todo/Pages/components/custom_appbar.dart';
 
+import 'components/searchbar_widget.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -15,32 +17,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
-          children: [
-            CustomAppBarWidget(),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                decoration: BoxDecoration(
-                  color: Colors.grey[200],
-                ),
-                child: TextFormField(
-                  decoration: const InputDecoration(
-                    hintText: "Search",
-                    hintStyle: TextStyle(
-                      color: Colors.black,
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide.none,
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide.none,
-                    ),
-                  ),
-                ),
-              ),
-            )
-          ],
+          children: [const CustomAppBarWidget(), SearchBarWidget()],
         ),
       ),
     );
