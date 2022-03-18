@@ -17,7 +17,10 @@ class SearchBarWidget extends StatelessWidget {
         ),
         child: TextFormField(
           decoration: const InputDecoration(
-            prefixIcon: Icon(Icons.search),
+            prefixIcon: Icon(
+              Icons.search,
+              color: Colors.blueAccent,
+            ),
             hintText: "Search",
             hintStyle: TextStyle(
               color: Colors.black,
