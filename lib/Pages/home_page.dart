@@ -1,6 +1,9 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:todo/Pages/components/custom_appbar.dart';
 import 'package:todo/Pages/components/list_button_box.dart';
+import 'package:todo/model/list_model.dart';
 
 import 'components/searchbar_widget.dart';
 
@@ -26,9 +29,30 @@ class _HomePageState extends State<HomePage> {
             //ListButton section
             const ListButtonBox(),
             //create addList data
-            Row(
-              children: [],
-            )
+            Container(
+              decoration: (BoxDecoration(
+                color: products[1].color,
+                borderRadius: BorderRadius.circular(10),
+              )),
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: [
+                  Text(
+                    products[0].title,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 19,
+                    ),
+                  ),
+                  Text(
+                    products[0].desc,
+                    style: const TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
