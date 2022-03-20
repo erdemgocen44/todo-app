@@ -22,7 +22,14 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: Container(
         height: MediaQuery.of(context).size.height * 0.1,
         decoration: BoxDecoration(
-          color: Colors.lightBlue[50],
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.blue.withOpacity(0.5),
+              spreadRadius: 2.0,
+              blurRadius: 8.0,
+            )
+          ],
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -35,8 +42,14 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Container(
+              padding: EdgeInsets.all(15),
               decoration: BoxDecoration(
                 color: Colors.blue[400],
+                shape: BoxShape.circle,
+              ),
+              child: const Icon(
+                Icons.add,
+                color: Colors.white,
               ),
             ),
             IconButton(
