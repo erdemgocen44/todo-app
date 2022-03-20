@@ -40,7 +40,7 @@ class ListCard extends StatelessWidget {
       child: Container(
         decoration: (BoxDecoration(
           color: product.color,
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(12),
         )),
         padding: const EdgeInsets.all(8.0),
         child: Column(
