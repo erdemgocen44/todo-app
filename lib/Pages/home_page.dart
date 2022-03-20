@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
-        child: Column(
+        child: ListView(
           children: [
             //appbar seaction
             const CustomAppBarWidget(),
@@ -29,29 +29,64 @@ class _HomePageState extends State<HomePage> {
             //ListButton section
             const ListButtonBox(),
             //create addList data
-            Container(
-              decoration: (BoxDecoration(
-                color: products[1].color,
-                borderRadius: BorderRadius.circular(10),
-              )),
+
+            Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Column(
-                children: [
-                  Text(
-                    products[0].title,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 19,
-                    ),
-                  ),
-                  Text(
-                    products[0].desc,
-                    style: const TextStyle(
-                      fontSize: 16,
-                    ),
-                  ),
-                ],
+              child: GridView.builder(
+                shrinkWrap: true,
+                physics: ScrollPhysics(),
+                itemCount: products.length,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 10.0,
+                    mainAxisSpacing: 10.0),
+                itemBuilder: (context, index) => ListCard(
+                  press: () {},
+                  product: products[index],
+                ),
               ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class ListCard extends StatelessWidget {
+  const ListCard({
+    Key? key,
+    required this.product,
+    required this.press,
+  }) : super(key: key);
+  final Product product;
+  final VoidCallback press;
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: press,
+      child: Container(
+        decoration: (BoxDecoration(
+          color: product.color,
+          borderRadius: BorderRadius.circular(10),
+        )),
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            Text(
+              product.title,
+              style: const TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: 19,
+              ),
+            ),
+            Text(
+              product.desc,
+              maxLines: 5,
+              style: const TextStyle(
+                  fontSize: 16,
+                  color: Colors.black54,
+                  fontWeight: FontWeight.bold),
             ),
           ],
         ),

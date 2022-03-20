@@ -8,7 +8,11 @@ class Product {
 }
 
 List<Product> products = [
-  Product(title: "Health", desc: "lorem", color: Colors.amber),
+  Product(
+      title: "Health",
+      desc:
+          "loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem",
+      color: Colors.amber),
   Product(title: "Food", desc: "lorem2", color: Colors.red),
   Product(title: "Shop List", desc: "lorem3", color: Colors.green),
   Product(title: "Team meeting", desc: "lorem4", color: Colors.blue),
