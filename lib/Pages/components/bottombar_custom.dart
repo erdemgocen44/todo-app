@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo/Pages/add_list/add_todo.dart';
 
 class BottomBarCustom extends StatelessWidget {
   const BottomBarCustom({
@@ -29,15 +30,21 @@ class BottomBarCustom extends StatelessWidget {
               Icons.space_dashboard_rounded,
             ),
           ),
-          Container(
-            padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: Colors.blue[400],
-              shape: BoxShape.circle,
-            ),
-            child: const Icon(
-              Icons.add,
-              color: Colors.white,
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Addtodo()));
+            },
+            child: Container(
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: Colors.blue[400],
+                shape: BoxShape.circle,
+              ),
+              child: const Icon(
+                Icons.add,
+                color: Colors.white,
+              ),
             ),
           ),
           IconButton(
