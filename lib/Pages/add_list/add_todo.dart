@@ -28,6 +28,16 @@ class _AddtodoState extends State<Addtodo> {
               Icons.dashboard_outlined,
             ),
           ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.notifications_outlined),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.push_pin_outlined,
+            ),
+          ),
         ],
       ),
     );
